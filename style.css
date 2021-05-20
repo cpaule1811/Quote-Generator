@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Signika+Negative&display=swap');
+
+html  {
+    box-sizing: border-box;
+}
+
+body { 
+    margin:0;
+    min-height: 100vh;
+    background: linear-gradient(to right, #dae2f8, #d6a4a4);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Dancing Script', cursive;
+}
+
+.container { 
+    margin:10px;
+    width: auto;
+    max-width: 700px;
+    padding: 20px 30px;
+    border-radius:10px;
+    box-shadow: 0 10px 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.wrapper { 
+    display: flex; 
+    justify-content: space-between;
+    height:40px;
+}
+
+#button { 
+    width: auto; 
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size:16px;
+    font-weight: 300;
+    outline: none;
+    border: none;
+    border-radius: 12px;
+    color:white;
+    background-color: rgba(53, 50, 50, 0.75);
+}
+
+#twitter { 
+    width: auto;
+    padding-left: 12px;
+    padding-right: 8px;
+    border-radius: 12px;
+    outline: none;
+    border: none;
+    outline-width: 0;
+    background-color: rgba(53, 50, 50, 0.75);
+    color:white;
+}
+
+#twitter:hover { 
+    color:rgb(67, 173, 215);
+    background-color: rgba(255, 255, 255, 0.8);
+    transform: scale(1.1);
+    font-size: 18px;
+    transition: font-size 1s, background-color 1s, color 1s, transform .6s ease-in-out;
+}
+
+#button:hover { 
+    color:rgb(67, 173, 215);
+    background-color: rgba(255, 255, 255, 0.8);
+    transform: scale(1.1);
+    font-size: 18px;
+    transition: font-size 2s, background-color 1s, color 1s, font-size 1s, transform .6s ease-in-out;
+}
+
+#author { 
+    font-family: 'Signika Negative', sans-serif;
+    font-style: italic;
+    font-size:25px;
+    font-weight:400;
+}
+
+#quote { 
+    font-size:40px;
+}
+
+#loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+    visibility: initial;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  @media only screen and (max-width: 470px){ 
+       #button { 
+           font-size:80%;
+           transition: font-size 1s;
+       }
+       .fa-2x { 
+           font-size: 120%;
+           transition: font-size 1s;
+       }
+  }
