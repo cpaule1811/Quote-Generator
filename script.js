@@ -18,7 +18,6 @@ function toggleLoadingSpinner(loadingStatus) {
     }
 }
  
-
 function makeQuote(){ 
     quoteText.innerHTML = `"${quotes[i].quote}"`;
     authorText.innerHTML = `- ${quotes[i].character}`;
