@@ -13,15 +13,15 @@ function toggleLoadingSpinner(loadingStatus) {
         loader.hidden = false;
         quoteContainer.hidden = true;
     } else {
-    quoteContainer.hidden = false;
-    loader.hidden = true;
+        quoteContainer.hidden = false;
+        loader.hidden = true;
     }
 }
  
-function makeQuote(){ 
+function makeQuote(){  
     quoteText.innerHTML = `"${quotes[i].quote}"`;
     authorText.innerHTML = `- ${quotes[i].character}`;
-    toggleLoadingSpinner(false);
+    toggleLoadingSpinner(false); 
     i++;
     if (i > quotes.length -2){  
          loadQuotes()
@@ -29,16 +29,18 @@ function makeQuote(){
 }
 
 async function loadQuotes (){
-    toggleLoadingSpinner(true); 
+    
     try {
       const url = 'https://animechan.vercel.app/api/quotes';
       const response = await fetch(url);
       const data = await response.json();
       quotes = quotes.concat(await data);
-      makeQuote();
     }
     catch(e) { 
        console.log('Sorry we could not find quotes')
+    }
+    if(i === 0){ 
+        makeQuote();
     }
 } 
 
@@ -50,7 +52,9 @@ function tweetQuote() {
 tweet.addEventListener('click', tweetQuote);
 newQuote.addEventListener('click', makeQuote)
 
+toggleLoadingSpinner(true); 
 loadQuotes();
+
 
 
 
